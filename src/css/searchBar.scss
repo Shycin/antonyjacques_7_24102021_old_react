@@ -1,0 +1,32 @@
+$bg: lightgrey;
+
+.SearchBar
+{
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+  display: flex;
+
+  &>*
+  {
+    padding: 20px 10px;
+  }
+
+  input
+  {
+    width: 100%;
+    border: unset;
+    border-radius: 5px;
+    background-color: $bg;
+    
+  }
+
+  .search-icon
+  {
+    font-size: 24px;
+    background-color: $bg;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;   
+  }
+}
