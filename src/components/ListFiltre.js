@@ -80,47 +80,51 @@ const ListFiltre = () => {
     setArrayCategories(tempArray)
   }
 
-  return arrayCategories.map((item, key) => (
+  return (
     <div className='CategoriesSearch'>
-      <button
-        onClick={() => showItem(key)}
-        onKeyDown={(e) => (verificationEvent(e) ? showItem(key) : '')}
-        type='button'
-        aria-haspopup='listbox'
-        aria-labelledby='order_label'
-        aria-expanded='false'
-        id='order_filtre'
-        className='listbox__btn btn select'>
-        <span className='listbox__btn__text'>{item.name}</span>
-        <span className='fas fa-chevron-down' />
-      </button>
-      <ul
-        key={uid(key)}
-        id='order_list'
-        aria-activedescendant='order-0'
-        tabIndex='-1'
-        role='listbox'
-        aria-labelledby='order_label'
-        className={`listbox__list ${isShow(item.show)}`}>
-        {item.items.map((filtre, i) => (
-          <li
-            id={`order-${i}`}
-            key={uid(filtre, i)}
-            role='option'
-            className={`listbox__elt ${
-              search.indexOf(filtre) >= 0 ? 'hidden' : ''
-            }`}
-            tabIndex='0'
-            onClick={() => searchEngine(filtre)}
-            onKeyPress={(e) =>
-              verificationEvent(e) ? searchEngine(filtre) : ''
-            }
-            aria-selected={search.indexOf(filtre) ? 'true' : 'false'}>
-            {filtre}
-          </li>
-        ))}
-      </ul>
+      {arrayCategories.map((item, key) => (
+        <div>
+          <button
+            onClick={() => showItem(key)}
+            onKeyDown={(e) => (verificationEvent(e) ? showItem(key) : '')}
+            type='button'
+            aria-haspopup='listbox'
+            aria-labelledby='order_label'
+            aria-expanded='false'
+            id='order_filtre'
+            className='listbox__btn btn select'>
+            <span className='listbox__btn__text'>{item.name}</span>
+            <span className='fas fa-chevron-down' />
+          </button>
+          <ul
+            key={uid(key)}
+            id='order_list'
+            aria-activedescendant='order-0'
+            tabIndex='-1'
+            role='listbox'
+            aria-labelledby='order_label'
+            className={`CategoriesSearch__list ${isShow(item.show)}`}>
+            {item.items.map((filtre, i) => (
+              <li
+                id={`order-${i}`}
+                key={uid(filtre, i)}
+                role='option'
+                className={`CategoriesSearch__list__elt ${
+                  search.indexOf(filtre) >= 0 ? 'hidden' : ''
+                }`}
+                tabIndex='0'
+                onClick={() => searchEngine(filtre)}
+                onKeyPress={(e) =>
+                  verificationEvent(e) ? searchEngine(filtre) : ''
+                }
+                aria-selected={search.indexOf(filtre) ? 'true' : 'false'}>
+                {filtre}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
-  ))
+  )
 }
 export default ListFiltre

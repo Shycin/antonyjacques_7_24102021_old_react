@@ -2,4 +2,16 @@
 {
   display: flex;
   gap: 50;
+ 
+  ul, li
+  {
+    list-style: none;
+  }
+
+  &__list
+  {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
 }
