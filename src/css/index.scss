@@ -6,6 +6,15 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   text-decoration: none;
 }
 
+:root
+{
+  --lime : rgb(104,217,164);
+  --blood : rgb(237,100,84);
+}
+
+.bg-lime{background-color: var(--lime);}
+.bg-blood{background-color: var(--blood);}
+
 body {
   max-width: 1800px;
   margin: auto;

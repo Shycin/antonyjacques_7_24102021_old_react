@@ -1,7 +1,10 @@
 .CategoriesSearch
 {
   display: flex;
-  gap: 50;
+  gap: 20px;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 20px;
  
   ul, li
   {
@@ -12,6 +15,55 @@
   {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+    color: white;
+    padding: 20px 0;
+    border-radius: 5px;
+
+    &__elt
+    {
+      flex-basis: calc(100%/3 - 3 * 1em);
+      text-align: left;
+      margin: 0 1em;
+    }
+  }
+
+  &__categorie
+  {
+    border-radius: 5px;
+    height: 50px;
+
+    &__btn
+    {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      color: white !important;
+      padding: 10px 15px;
+    }
+
+    &__SearchBar
+    {
+      display: flex;
+      align-items: center;
+      padding: 1em 1em 0 1em;
+      color: white;
+
+      input
+      {
+        flex-basis: 100%;
+        border: none;
+        background: none;
+        opacity: 0.8;
+        color: white;
+      }
+
+      label
+      {
+        width: 5em;
+      }
+    }
   }
 }

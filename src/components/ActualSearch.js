@@ -26,13 +26,13 @@ const ActualSearch = () => {
         <div
           tabIndex={0}
           role='button'
-          className='ItemsSearch__item bg-primary'
+          className={`ItemsSearch__item ${element.class}`}
           key={uid(key)}
           onClick={() => deleteItemSearch(key)}
           onKeyDown={(e) =>
             verificationEvent(e) ? deleteItemSearch(key) : ''
           }>
-          <span>{element}</span>
+          <span>{element.value}</span>
           <span className='far fa-times-circle' />
         </div>
       ))}
